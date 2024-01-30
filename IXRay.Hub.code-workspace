@@ -1,0 +1,21 @@
+{
+    "folders": [
+        {
+            "name": "IX-Ray Hub",
+            "path": "."
+        }
+    ],
+    "settings": {
+        "files.associations": {
+            "*.csproj": "xml",
+            "*.props": "xml",
+            "*.iss": "ini"
+        },
+        "dotnet.defaultSolution": "IXRay.Hub.sln",
+        "markdownlint.ignore": [
+            ".github/**.md"
+        ],
+        "vsicons.dontShowNewVersionMessage": true,
+        "vssolution.lineEndings": "crlf"
+    }
+}

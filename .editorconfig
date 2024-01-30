@@ -1,0 +1,75 @@
+# Enable top-most EditorConfig file
+root = true
+
+# Visual Studio solutions
+[*.sln]
+
+# Common settings
+charset = utf-8-bom
+end_of_line = crlf
+indent_size = 4
+indent_style = tab
+insert_final_newline = true
+tab_width = 4
+
+# XML-based files
+[*.{csproj,props,targets,resx,xaml,axaml}]
+
+# Common settings
+charset = utf-8
+end_of_line = crlf
+indent_size = 4
+indent_style = space
+insert_final_newline = true
+
+# YAML-based files
+[*.{yml,yaml}]
+
+# Common settings
+charset = utf-8
+end_of_line = lf
+indent_size = 2
+indent_style = space
+insert_final_newline = true
+
+# PowerShell codestyle settings
+[*.ps1]
+
+# Common settings
+charset = utf-8
+end_of_line = crlf
+indent_size = 4
+indent_style = space
+insert_final_newline = true
+
+# C# codestyle settings
+[*.cs]
+
+# Common settings
+charset = utf-8
+end_of_line = crlf
+indent_size = 4
+indent_style = space
+insert_final_newline = true
+
+# Import directives settings
+dotnet_sort_system_directives_first = true
+dotnet_separate_import_directive_groups = true
+
+# Whitespace options
+dotnet_style_allow_multiple_blank_lines_experimental = false
+
+# Prefer "var" everywhere
+csharp_style_var_for_built_in_types = true:suggestion
+csharp_style_var_when_type_is_apparent = true:suggestion
+csharp_style_var_elsewhere = true:suggestion
+
+# Markdown files
+[*.md]
+
+# Common settings
+charset = utf-8
+end_of_line = crlf
+indent_size = 2
+indent_style = space
+insert_final_newline = true
