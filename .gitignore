@@ -1,0 +1,31 @@
+# Global ignore list of different binaries and another temporary files
+
+# Visual Studio cache and settings
+.vs/
+*.suo
+*.user
+
+# Visual Studio Code cache and settings
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# IntelliJ IDEA and Rider cache and settings
+.idea/
+*.sln.iml
+
+# Build results
+bin/
+obj/
+
+# MSTest Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# MacOS Cache
+.DS_Store
+
+# Fody
+FodyWeavers.xsd
