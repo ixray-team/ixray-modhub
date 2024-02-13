@@ -2,6 +2,7 @@ using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 
+using IXRay.Hub.Avalonia.Services;
 using IXRay.Hub.Avalonia.ViewModels;
 using IXRay.Hub.Avalonia.Views;
 
@@ -42,7 +43,13 @@ public partial class App : Application
         {
             DataContext = provider.GetRequiredService<MainWindowViewModel>()
         });
+
         services.AddSingleton<MainWindowViewModel>();
+
+        services.AddSingleton<INavigationService, NavigationService>();
+        services.AddSingleton<Func<Type, ViewModelBase>>(
+            provider => viewModelType => (ViewModelBase)provider.GetRequiredService(viewModelType));
+
 
         return services;
     }
