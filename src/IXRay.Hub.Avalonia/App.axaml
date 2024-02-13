@@ -3,10 +3,11 @@
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:IXRay.Hub.Avalonia"
+    xmlns:services="using:IXRay.Hub.Avalonia.Services"
     RequestedThemeVariant="Default">
 
     <Application.DataTemplates>
-        <local:ViewLocator />
+        <services:ViewLocator />
     </Application.DataTemplates>
 
     <Application.Styles>

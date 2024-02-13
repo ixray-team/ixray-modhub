@@ -3,7 +3,7 @@ using Avalonia.Controls.Templates;
 
 using IXRay.Hub.Avalonia.ViewModels;
 
-namespace IXRay.Hub.Avalonia;
+namespace IXRay.Hub.Avalonia.Services;
 
 public class ViewLocator : IDataTemplate
 {
