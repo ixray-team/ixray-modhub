@@ -10,6 +10,7 @@ public class WindowMapper
 
     public WindowMapper()
     {
+        RegisterMapping<MessageWindowViewModel, MessageWindow>();
     }
 
     public void RegisterMapping<TViewModel, TWindow>() where TViewModel : ViewModelBase where TWindow : Window 

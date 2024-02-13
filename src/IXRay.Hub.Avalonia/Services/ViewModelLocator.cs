@@ -10,6 +10,7 @@ public class ViewModelLocator(IServiceProvider serviceProvider)
 
     // Windows
     public MainWindowViewModel MainWindowViewModel => _serviceProvider.GetRequiredService<MainWindowViewModel>();
+    public MessageWindowViewModel MessageWindowViewModel => _serviceProvider.GetRequiredService<MessageWindowViewModel>();
 
     // Views
     public HomeViewModel HomeViewModel => _serviceProvider.GetRequiredService<HomeViewModel>();
