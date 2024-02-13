@@ -1,0 +1,80 @@
+name: 'Build application'
+
+on:
+  push:
+    branches:
+      - '**'
+    paths:
+      - '.github/workflows/**'
+      - 'src/**'
+      - '*.sln'
+      - '*.props'
+      - '*.targets'
+  pull_request:
+    branches:
+      - '**'
+    paths:
+      - '.github/workflows/**'
+      - 'src/**'
+      - '*.sln'
+      - '*.props'
+      - '*.targets'
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  build-app:
+    name: 'Build'
+
+    strategy:
+      matrix:
+        system:
+          - windows-2022
+        config:
+          - Debug
+          - Release
+
+    runs-on: ${{ matrix.system }}
+
+    env:
+      Solution: IXRay.Hub.sln
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          key: ModHub-NuGet-${{ hashFiles('**/packages.lock.json') }}
+          restore-keys: |
+            ModHub-NuGet-${{ hashFiles('**/packages.lock.json') }}
+            ModHub-NuGet-
+          path: |
+            ~/.nuget/packages
+
+      - name: Restore dependencies
+        run: |
+          dotnet restore $env:Solution `
+            --locked-mode
+
+      - name: Build application
+        run: |
+          dotnet build $env:Solution `
+            --configuration ${{ matrix.config }} `
+            --no-restore
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: bin-${{ matrix.config }}-${{ github.sha }}
+          path: bin/${{ matrix.config }}/
