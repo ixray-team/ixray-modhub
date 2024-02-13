@@ -51,7 +51,9 @@ public partial class App : Application
         services.AddSingleton<INavigationService, NavigationService>();
         services.AddSingleton<Func<Type, ViewModelBase>>(
             provider => viewModelType => (ViewModelBase)provider.GetRequiredService(viewModelType));
-
+        services.AddSingleton<ViewModelLocator>();
+        services.AddSingleton<WindowMapper>();
+        services.AddSingleton<IWindowManager, WindowManager>();
 
         return services;
     }
