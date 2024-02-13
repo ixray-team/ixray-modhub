@@ -47,6 +47,7 @@ public partial class App : Application
         services.AddSingleton<MainWindowViewModel>();
         services.AddSingleton<HomeViewModel>();
         services.AddSingleton<SettingsViewModel>();
+        services.AddTransient<MessageWindowViewModel>();
 
         services.AddSingleton<INavigationService, NavigationService>();
         services.AddSingleton<Func<Type, ViewModelBase>>(
