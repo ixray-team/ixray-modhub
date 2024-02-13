@@ -1,0 +1,15 @@
+<UserControl
+    x:Class="IXRay.Hub.Avalonia.Views.HomeView"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:vm="using:IXRay.Hub.Avalonia.ViewModels"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <Design.DataContext>
+        <vm:HomeViewModel />
+    </Design.DataContext>
+    Welcome to Home!
+</UserControl>

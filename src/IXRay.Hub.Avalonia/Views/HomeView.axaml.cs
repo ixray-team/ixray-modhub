@@ -2,9 +2,9 @@ using Avalonia.Controls;
 
 namespace IXRay.Hub.Avalonia.Views;
 
-public partial class MainWindow : Window
+public partial class HomeView : UserControl
 {
-    public MainWindow()
+    public HomeView()
     {
         InitializeComponent();
     }
