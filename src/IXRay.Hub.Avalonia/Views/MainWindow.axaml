@@ -16,4 +16,19 @@
         <vm:MainWindowViewModel />
     </Design.DataContext>
 
+    <Grid ColumnDefinitions="100,*">
+        <StackPanel Grid.Column="0">
+            <Button
+                Content="Home"
+                Command="{Binding NavigateToHomeCommand}" />
+
+            <Button
+                Content="Settings"
+                Command="{Binding NavigateToSettingsCommand}" />
+        </StackPanel>
+        <ContentControl
+            Grid.Column="1"
+            Content="{Binding NavigationService.CurrentView}" />
+    </Grid>
+
 </Window>
