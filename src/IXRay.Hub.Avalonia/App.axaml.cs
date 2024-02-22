@@ -4,7 +4,6 @@ using Avalonia.Markup.Xaml;
 
 using IXRay.Hub.Avalonia.Services;
 using IXRay.Hub.Avalonia.ViewModels;
-using IXRay.Hub.Avalonia.Views;
 
 using Microsoft.Extensions.DependencyInjection;
 
@@ -27,9 +26,10 @@ public partial class App : Application
 
     public override void OnFrameworkInitializationCompleted()
     {
-        if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
-        {
-            desktop.MainWindow = _serviceProvider.GetRequiredService<MainWindow>();
+        if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop) {
+            var windowManager = _serviceProvider.GetRequiredService<IWindowManager>();
+            desktop.MainWindow = windowManager.GetWindow(_serviceProvider.GetRequiredService<MainWindowViewModel>());
+            desktop.MainWindow?.Show();
         }
 
         base.OnFrameworkInitializationCompleted();
@@ -38,11 +38,6 @@ public partial class App : Application
     private static ServiceCollection ConfigureServices()
     {
         var services = new ServiceCollection();
-
-        services.AddSingleton(provider => new MainWindow
-        {
-            DataContext = provider.GetRequiredService<MainWindowViewModel>()
-        });
 
         services.AddSingleton<MainWindowViewModel>();
         services.AddSingleton<HomeViewModel>();
