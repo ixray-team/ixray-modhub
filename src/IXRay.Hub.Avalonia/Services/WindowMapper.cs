@@ -1,6 +1,7 @@
-﻿using Avalonia.Controls;
+using Avalonia.Controls;
 
 using IXRay.Hub.Avalonia.ViewModels;
+using IXRay.Hub.Avalonia.Views;
 
 namespace IXRay.Hub.Avalonia.Services;
 
@@ -10,6 +11,7 @@ public class WindowMapper
 
     public WindowMapper()
     {
+        RegisterMapping<MainWindowViewModel, MainWindow>();
         RegisterMapping<MessageWindowViewModel, MessageWindow>();
     }
 
