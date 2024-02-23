@@ -6,7 +6,7 @@ namespace IXRay.Hub.Avalonia.Services;
 
 public interface IWindowManager
 {
-    Window? GetWindow(ViewModelBase viewModel);
+    Window GetWindow(ViewModelBase viewModel);
     void ShowWindow(ViewModelBase viewModel);
     void CloseWindow(ViewModelBase viewModel);
 }

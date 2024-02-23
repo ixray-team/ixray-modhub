@@ -19,25 +19,28 @@ public class WindowManager(WindowMapper windowMapper) : IWindowManager
     /// <returns>Window associated with provided view model, or <c>null</c> if window type is not found</returns>
     /// <exception cref="ArgumentException">Thrown when window type is not found for provided view model</exception>
     /// <exception cref="InvalidOperationException">Thrown when failed to create instance of window</exception>
-    public Window? GetWindow(ViewModelBase viewModel)
+    public Window GetWindow(ViewModelBase viewModel)
     {
         // Get the window type for the provided view model from WindowMapper
-        var windowType = _windowMapper.GetWindowTypeForViewModel(viewModel.GetType());
+        var windowType = _windowMapper.GetWindowTypeForViewModel(viewModel.GetType()) 
+            ?? throw new ArgumentException("Window type not found for the provided view model", nameof(viewModel));
 
-        // If window type is not found, throw an ArgumentException
-        if (windowType is null) {
-            throw new ArgumentException("Window type not found for the provided view model", nameof(viewModel));
+        if (windowType.GetConstructors().Length == 0) {
+            throw new InvalidOperationException($"No constructors found for window type '{windowType.FullName}'");
+        }
+        if (viewModel.GetType().GetConstructors().Length == 0) {
+            throw new InvalidOperationException($"No constructors found for viewModel type '{viewModel.GetType().FullName}'");
         }
 
         // Create an instance of the window using Activator
-        if (Activator.CreateInstance(windowType) is not Window window) {
+        if (Activator.CreateInstance(windowType) is Window window) {
+            // Set the data context for the window
+            window.DataContext = viewModel;
+            return window;
+        } else {
             // If failed to create an instance of the window, throw InvalidOperationException
             throw new InvalidOperationException("Failed to create an instance of window");
         }
-
-        // Set the data context for the window
-        window.DataContext = viewModel;
-        return window;
     }
 
     /// <summary>
