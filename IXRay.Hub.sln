@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IXRay.Hub.Avalonia", "src\IXRay.Hub.Avalonia\IXRay.Hub.Avalonia.csproj", "{E5E7BFE3-BBA2-4FDF-9D60-0C01A53A564C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IXRay.Hub.Avalonia", "src\IXRay.Hub.Avalonia\IXRay.Hub.Avalonia.csproj", "{E5E7BFE3-BBA2-4FDF-9D60-0C01A53A564C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5D3A253C-5788-43FB-8E02-A1BBED66F76F}"
 	ProjectSection(SolutionItems) = preProject
@@ -18,6 +18,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		LICENSE.md = LICENSE.md
 		LICENSE.ru.md = LICENSE.ru.md
 		NuGet.config = NuGet.config
+		publish-modhub.bat = publish-modhub.bat
 		README.md = README.md
 		README.ru.md = README.ru.md
 		Settings.XamlStyler = Settings.XamlStyler
