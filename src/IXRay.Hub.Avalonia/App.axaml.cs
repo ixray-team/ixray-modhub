@@ -2,11 +2,14 @@ using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 
+using IXRay.Hub.Avalonia.Logging;
 using IXRay.Hub.Avalonia.Services;
 using IXRay.Hub.Avalonia.ViewModels;
 using IXRay.Hub.Avalonia.Views;
 
 using Microsoft.Extensions.DependencyInjection;
+
+using Serilog;
 
 namespace IXRay.Hub.Avalonia;
 
@@ -39,6 +42,8 @@ public partial class App : Application
     private static ServiceCollection ConfigureServices()
     {
         var services = new ServiceCollection();
+        services.AddLogging(loggingBuilder =>
+            loggingBuilder.AddSerilog(LogManager.CreateLoggerDebug(), dispose: true));
 
         services.AddSingleton<MainWindowViewModel>();
         services.AddSingleton<HomeViewModel>();
