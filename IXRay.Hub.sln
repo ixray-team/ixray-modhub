@@ -24,6 +24,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Settings.XamlStyler = Settings.XamlStyler
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{5DA486C2-E50E-42C6-80CA-1011BE05AE8F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{BB8A643B-9044-4007-BE2D-BF85F92C3AB0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IXRay.Hub.Logging", "src\IXRay.Hub.Logging\IXRay.Hub.Logging.csproj", "{23B1D848-2667-4CC9-AB1D-93E4F1D3CD3A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,9 +40,17 @@ Global
 		{E5E7BFE3-BBA2-4FDF-9D60-0C01A53A564C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5E7BFE3-BBA2-4FDF-9D60-0C01A53A564C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5E7BFE3-BBA2-4FDF-9D60-0C01A53A564C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23B1D848-2667-4CC9-AB1D-93E4F1D3CD3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23B1D848-2667-4CC9-AB1D-93E4F1D3CD3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23B1D848-2667-4CC9-AB1D-93E4F1D3CD3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23B1D848-2667-4CC9-AB1D-93E4F1D3CD3A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E5E7BFE3-BBA2-4FDF-9D60-0C01A53A564C} = {5DA486C2-E50E-42C6-80CA-1011BE05AE8F}
+		{23B1D848-2667-4CC9-AB1D-93E4F1D3CD3A} = {BB8A643B-9044-4007-BE2D-BF85F92C3AB0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9755F5FF-ED73-4104-AC03-D326FD6072FB}
