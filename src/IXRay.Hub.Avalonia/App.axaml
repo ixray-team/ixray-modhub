@@ -7,7 +7,7 @@
     RequestedThemeVariant="Default">
 
     <Application.DataTemplates>
-        <services:ViewLocator />
+        <services:DataTemplateLocator />
     </Application.DataTemplates>
 
     <Application.Styles>
