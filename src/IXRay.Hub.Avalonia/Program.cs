@@ -38,7 +38,8 @@ internal sealed class Program
         Log.Logger = LogManager.CreateLoggerDebug();
 
         Log.Information("Start IX-Ray Hub");
-        SystemInfoPrinter.PrintOsInfo(Log.Logger);
+        Log.Information(InformationPrinter.GetOsInfo());
+        Log.Information(InformationPrinter.GetApplicationInfo());
 
         BuildAvaloniaApp().StartWithClassicDesktopLifetime(args);
     }
