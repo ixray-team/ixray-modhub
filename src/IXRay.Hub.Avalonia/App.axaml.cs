@@ -2,10 +2,10 @@ using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 
+using IXRay.Hub.Avalonia.Injection;
 using IXRay.Hub.Avalonia.Logging;
 using IXRay.Hub.Avalonia.Services;
 using IXRay.Hub.Avalonia.ViewModels;
-using IXRay.Hub.Avalonia.Views;
 
 using Microsoft.Extensions.DependencyInjection;
 
@@ -45,17 +45,8 @@ public partial class App : Application
         services.AddLogging(loggingBuilder =>
             loggingBuilder.AddSerilog(LogManager.CreateLoggerDebug(), dispose: true));
 
-        services.AddSingleton<MainWindowViewModel>();
-        services.AddSingleton<HomeViewModel>();
-        services.AddSingleton<SettingsViewModel>();
-        services.AddTransient<MessageWindowViewModel>();
+        services.AddPresetationServices();
 
-        services.AddSingleton<HomeView>();
-        services.AddSingleton<SettingsView>();
-
-        services.AddSingleton<MainWindow>();
-        services.AddScoped<MessageWindow>();
-        
         services.AddSingleton<INavigationService, NavigationService>();
         services.AddSingleton<Func<Type, ViewModelBase>>(
             provider => viewModelType => (ViewModelBase)provider.GetRequiredService(viewModelType));
@@ -63,6 +54,7 @@ public partial class App : Application
         services.AddSingleton<IWindowManager, WindowManager>();
 
         services.AddSingleton<WindowMapper>();
+
         return services;
     }
 }
