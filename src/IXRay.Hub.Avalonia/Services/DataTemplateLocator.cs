@@ -5,7 +5,7 @@ using IXRay.Hub.Avalonia.ViewModels;
 
 namespace IXRay.Hub.Avalonia.Services;
 
-public class ViewLocator : IDataTemplate
+public class DataTemplateLocator : IDataTemplate
 {
     public Control? Build(object? data)
     {
