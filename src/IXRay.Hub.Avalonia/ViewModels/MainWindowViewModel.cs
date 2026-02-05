@@ -1,6 +1,5 @@
 using System.Reactive;
 
-using IXRay.Hub.Avalonia.Helpers;
 using IXRay.Hub.Avalonia.Services;
 
 using ReactiveUI;
@@ -25,18 +24,6 @@ public class MainWindowViewModel : ViewModelBase
         _windowManager = windowManager;
         _viewModelLocator = viewModelLocator;
         SetupBinding();
-    }
-
-    public MainWindowViewModel()
-    {
-        ExceptionHelper.ThrowIfEmptyConstructorNotInDesignTime($"{nameof(MainWindowViewModel)}");
-
-        NavigationService = null!;
-        _windowManager = null!;
-        _viewModelLocator = null!;
-        NavigateToHomeCommand = null!;
-        NavigateToSettingsCommand = null!;
-        OpenMessageWindowCommand = null!;
     }
 
     private void SetupBinding()
