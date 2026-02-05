@@ -1,6 +1,6 @@
 # IX-Ray Hub
 
-[English](./LICENSE.md) | Русский
+[English](../LICENSE.md) | Русский
 
 Подробный текст лицензии на IX-Ray Hub
 

@@ -4,9 +4,9 @@ English | [Русский](./README.ru.md)
 
 ## Requirements
 
-- Visual Studio 2022, Visual Studio Code or Rider
+- Visual Studio 2026, Visual Studio Code or Rider
   - Avalonia plugin
-- .NET 8 SDK
+- .NET 10 SDK
 - Git
 
 ## Building
