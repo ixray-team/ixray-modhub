@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/IXRay.Hub.sln",
+                "${workspaceFolder}/IXRay.Hub.slnx",
                 "-p:GenerateFullPaths=true",
                 "--consoleloggerparameters:NoSummary"
             ],
@@ -21,7 +21,7 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/IXRay.Hub.sln"
+                "${workspaceFolder}/IXRay.Hub.slnx"
             ],
             "problemMatcher": "$msCompile"
         }

@@ -5,7 +5,7 @@
         "*.props": "xml",
         "*.iss": "ini"
     },
-    "dotnet.defaultSolution": "IXRay.Hub.sln",
+    "dotnet.defaultSolution": "IXRay.Hub.slnx",
     "markdownlint.ignore": [
         ".github/**.md"
     ],

@@ -1,0 +1,27 @@
+<Solution>
+  <Folder Name="/Frontend/">
+    <Project Path="src/IXRay.Hub.Avalonia/IXRay.Hub.Avalonia.csproj" />
+  </Folder>
+  <Folder Name="/Shared/">
+    <Project Path="src/IXRay.Hub.Logging/IXRay.Hub.Logging.csproj" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path=".gitattributes" />
+    <File Path=".gitignore" />
+    <File Path=".markdownlint.json" />
+    <File Path=".vsconfig" />
+    <File Path="Directory.Build.props" />
+    <File Path="NuGet.config" />
+    <File Path="publish-modhub.bat" />
+    <File Path="Settings.XamlStyler" />
+  </Folder>
+  <Folder Name="/Solution Items/docs/">
+    <File Path=".github/CONTRIBUTORS.md" />
+    <File Path=".github/CONTRIBUTORS.ru.md" />
+    <File Path=".github/LICENSE.ru.md" />
+    <File Path=".github/README.md" />
+    <File Path=".github/README.ru.md" />
+    <File Path="LICENSE.md" />
+  </Folder>
+</Solution>

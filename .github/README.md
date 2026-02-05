@@ -17,10 +17,10 @@ English | [Русский](./README.ru.md)
   git clone https://github.com/ixray-team/ixray-modhub
   ```
 
-- Build `IXRay.Hub.sln` using IDE or command:
+- Build `IXRay.Hub.slnx` using IDE or command:
 
   ```console
-  dotnet build IXRay.Hub.sln
+  dotnet build IXRay.Hub.slnx
   ```
 
 ## Contributors

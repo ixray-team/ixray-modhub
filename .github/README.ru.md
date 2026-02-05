@@ -17,10 +17,10 @@
   git clone https://github.com/ixray-team/ixray-modhub
   ```
 
-- Собрать `IXRay.Hub.sln` используя IDE или команду:
+- Собрать `IXRay.Hub.slnx` используя IDE или команду:
 
   ```console
-  dotnet build IXRay.Hub.sln
+  dotnet build IXRay.Hub.slnx
   ```
 
 ## Участники
